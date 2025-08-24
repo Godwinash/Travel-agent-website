@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust Travel - Your Journey Begins Here</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .package-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .search-focus:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+        }
+        .booking-step {
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+        .booking-step.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-globe-americas text-2xl text-blue-600"></i>
+                        <span class="ml-2 text-xl font-bold text-gray-800">Wanderlust Travel</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#packages" class="text-gray-600 hover:text-blue-600 transition-colors">Packages</a>
+                    <a href="#destinations" class="text-gray-600 hover:text-blue-600 transition-colors">Destinations</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        <i class="fas fa-phone-alt mr-2"></i>Book Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Discover Your Next Adventure</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Curated travel experiences crafted by experts to create memories that last a lifetime</p>
+                
+                <!-- Search Bar -->
+                <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-xl p-2 flex items-center">
+                    <input type="text" placeholder="Where would you like to go?" 
+                           class="flex-1 px-4 py-3 text-gray-800 search-focus border-none rounded-l-lg">
+                    <input type="date" class="px-4 py-3 text-gray-800 border-l border-gray-200">
+                    <button class="bg-blue-600 text-white px-6 py-3 rounded-r-lg hover:bg-blue-700 transition-colors ml-2">
+                        <i class="fas fa-search mr-2"></i>Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Packages -->
+    <section id="packages" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Featured Travel Packages</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Handpicked experiences designed to deliver unforgettable moments</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Package 1 -->
+                <div class="package-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="relative">
+                        <img src="https://placehold.co/600x400" alt="Luxury beach resort with turquoise waters and white sand beaches in the Maldives, tropical paradise with overwater bungalows" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Popular
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Maldives Paradise Escape</h3>
+                        <p class="text-gray-600 mb-4">7 days of luxury in overwater bungalows with all-inclusive amenities</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <span class="text-gray-700">4.9 (128 reviews)</span>
+                            </div>
+                            <span class="text-2xl font-bold text-blue-600">$2,499</span>
+                        </div>
+                        <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors book-now-btn">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Package 2 -->
+                <div class="package-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="relative">
+                        <img src="https://placehold.co/600x400" alt="Historic European cityscape with ancient architecture, cobblestone streets, and cultural landmarks in Rome, Italy" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">European Cultural Journey</h3>
+                        <p class="text-gray-600 mb-4">10-day tour through Rome, Paris, and Barcelona with guided historical tours</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <span class="text-gray-700">4.7 (89 reviews)</span>
+                            </div>
+                            <span class="text-2xl font-bold text-blue-600">$3,299</span>
+                        </div>
+                        <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors book-now-btn">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="package-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="relative">
+                        <img src="https://placehold.co/600x400" alt="Mountain adventure landscape with snow-capped peaks and hiking trails in the Swiss Alps, outdoor activity destination" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Adventure
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Alpine Adventure Package</h3>
+                        <p class="text-gray-600 mb-4">5 days of hiking, skiing, and mountain experiences in the Swiss Alps</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <span class="text-gray-700">4.8 (67 reviews)</span>
+                            </div>
+                            <span class="text-2xl font-bold text-blue-600">$1,899</span>
+                        </div>
+                        <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors book-now-btn">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Popular Destinations</h2>
+                <p class="text-gray-600">Explore our most sought-after travel locations around the world</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-umbrella-beach text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800">Beach Getaways</h3>
+                    <p class="text-sm text-gray-600">Tropical paradise</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-mountain text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800">Mountain Retreats</h3>
+                    <p class="text-sm text-gray-600">Alpine adventures</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto bg-purple-100 rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-city text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800">City Breaks</h3>
+                    <p class="text-sm text-gray-600">Urban exploration</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto bg-red-100 rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-globe-asia text-2xl text-red-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800">Cultural Tours</h3>
+                    <p class="text-sm text-gray-600">Historical journeys</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-xl shadow-2xl max-w-md w-full mx-4 max-h-90vh overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800">Book Your Adventure</h3>
+                    <button id="closeModal" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <div class="mb-6">
+                    <div class="flex justify-between mb-4">
+                        <div class="booking-step active text-center flex-1">
+                            <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-2">1</div>
+                            <span class="text-sm font-medium">Details</span>
+                        </div>
+                        <div class="booking-step text-center flex-1">
+                            <div class="w-8 h-8 bg-gray-300 text-white rounded-full flex items-center justify-center mx-auto mb-2">2</div>
+                            <span class="text-sm font-medium">Payment</span>
+                        </div>
+                        <div class="booking-step text-center flex-1">
+                            <div class="w-8 h-8 bg-gray-300 text-white rounded-full flex items-center justify-center mx-auto mb-2">3</div>
+                            <span class="text-sm font-medium">Confirm</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="bookingForm">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Travelers</label>
+                                <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    <option>1 Adult</option>
+                                    <option>2 Adults</option>
+                                    <option>3 Adults</option>
+                                    <option>4 Adults</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Departure Date</label>
+                                <input type="date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+                            Continue to Payment
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+                <p class="text-gray-600">Our travel experts are here to help you plan your perfect getaway</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-phone-alt text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800 mb-1">Call Us</h3>
+                            <p class="text-gray-600">+1 (555) 123-4567</p>
+                            <p class="text-sm text-gray-500">Mon-Fri, 9AM-6PM EST</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-envelope text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800 mb-1">Email Us</h3>
+                            <p class="text-gray-600">info@wanderlusttravel.com</p>
+                            <p class="text-sm text-gray-500">We respond within 24 hours</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-map-marker-alt text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800 mb-1">Visit Us</h3>
+                            <p class="text-gray-600">123 Travel Street</p>
+                            <p class="text-gray-600">New York, NY 10001</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Wanderlust Travel</h3>
+                    <p class="text-gray-400">Creating unforgettable travel experiences since 2010. Your journey begins with us.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Destinations</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Beach Resorts</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Mountain Retreats</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">City Breaks</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Cultural Tours</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-400 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Wanderlust Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Booking modal functionality
+            const bookingModal = document.getElementById('bookingModal');
+            const closeModal = document.getElementById('closeModal');
+            const bookButtons = document.querySelectorAll('.book-now-btn');
+            const bookingForm = document.getElementById('bookingForm');
+
+            bookButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    bookingModal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            closeModal.addEventListener('click', () => {
+                bookingModal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            });
+
+            bookingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your booking request! Our travel agent will contact you shortly to confirm your reservation.');
+                bookingModal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close modal when clicking outside
+            bookingModal.addEventListener('click', (e) => {
+                if (e.target === bookingModal) {
+                    bookingModal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Simple search functionality
+            const searchInput = document.querySelector('input[type="text"]');
+            const searchButton = document.querySelector('button');
+
+            searchButton.addEventListener('click', () => {
+                if (searchInput.value.trim()) {
+                    alert(`Searching for packages in: ${searchInput.value}`);
+                    searchInput.value = '';
+                }
+            });
+
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && searchInput.value.trim()) {
+                    alert(`Searching for packages in: ${searchInput.value}`);
+                    searchInput.value = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
